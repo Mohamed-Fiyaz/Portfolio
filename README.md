@@ -9,7 +9,8 @@ This website includes all the necessary details about myself and my achievements
 # My Achievements 
 To be able to view my achievements the person should click the golden badge which opens a new tab on their browser.
 ![2023-06-13 (5)](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/6a354077-7c47-4ee9-bd26-d21ee8cf3472)
-The achievements tab opened separately
+The achievements tab will be opened separately
+
 ![2023-06-13 (4)](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/280dc521-56b0-4140-acab-c6b8f9e5b7ce)
 # My Contact details
 ![2023-06-13 (7)](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/199d4cbc-0a80-4946-aa46-78cb4b3dc001)
