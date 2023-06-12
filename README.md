@@ -1,7 +1,7 @@
 # About_Mohamed_Fiyaz
 This website includes all the necessary details about myself and my achievements along with a few ways you can connect with me.
 # My Website Link: 
-# https://zealous-forest-0851fd010.3.azurestaticapps.net
+https://zealous-forest-0851fd010.3.azurestaticapps.net
 # Introduction
 ![2023-06-13](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/27791d42-19a9-437b-9b58-45c79e603779)
 # Where I Study
