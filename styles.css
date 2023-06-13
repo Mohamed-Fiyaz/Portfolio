@@ -263,3 +263,19 @@ hr {
     background-image: linear-gradient(to bottom, #fcf23c, #d9cf0b);
     text-decoration: none;
   }
+
+@media (max-width: 767px) {
+  /* Styles for mobile devices */
+  .btn11 {
+    /* Adjust position for mobile */
+    left: 20px;
+    top: 20px;
+  }
+
+  .btn22 {
+    /* Adjust position for mobile */
+    left: 20px;
+    top: 120px;
+  }
+}
+
