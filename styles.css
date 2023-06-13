@@ -68,22 +68,24 @@ hr {
     top: 40px;
 }
 
-/* Styles for desktop */
+.unique {
+    color: #66BFBF;
+    font-size: 30px;
+    position: absolute;
+    left: 145px;
+    top: 10px;
+}
+
 .btn11 {
-  position: absolute;
-  left: 100px;
-  top: 100px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
 }
 
 .btn22 {
-  position: absolute;
-  left: 250px;
-  top: 100px;
-}
-.unique {
-  position: absolute;
-  left: 1500px;
-  top: 300px;
+    position: absolute;
+    left: 250px;
+    top: 100px;
 }
 
 .bottomc{
