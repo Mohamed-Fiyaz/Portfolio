@@ -1,4 +1,4 @@
-# About_Mohamed_Fiyaz
+# Portfolio
 This website includes all the necessary details about myself and my achievements along with a few ways you can connect with me.
 # My Website Link: 
 https://zealous-forest-0851fd010.3.azurestaticapps.net
