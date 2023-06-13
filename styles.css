@@ -85,8 +85,8 @@ hr {
   color: #66BFBF;
   font-size: 30px;
   position: absolute;
-  left: 175px;
-  top: 50px;
+  left: 145px;
+  top: 10px;
 }
 
 /* Styles for mobile */
@@ -95,6 +95,7 @@ hr {
     position: static;
     display: block;
     margin-bottom: 10px;
+    left: 20px;
   }
   
   .unique {
@@ -103,7 +104,6 @@ hr {
     top: 20px;
   }
 }
-
 
 .bottomc{
     position: absolute;
