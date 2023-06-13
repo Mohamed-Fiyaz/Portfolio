@@ -72,8 +72,8 @@ hr {
     color: #66BFBF;
     font-size: 30px;
     position: absolute;
-    left: 145px;
-    top: 10px;
+    left: 70px;
+    top: 5px;
 }
 
 .btn11 {
@@ -84,8 +84,8 @@ hr {
 
 .btn22 {
     position: absolute;
-    left: 250px;
-    top: 100px;
+    left: 92px;
+    top: 160px;
 }
 
 @media only screen and (max-width: 600px) {
