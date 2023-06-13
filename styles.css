@@ -80,12 +80,14 @@ hr {
     position: absolute;
     left: 100px;
     top: 100px;
+    padding-right: 10px;
 }
 
 .btn22 {
     position: absolute;
     left: 250px;
     top: 100px;
+    padding-left: 10px;
 }
 
 .bottomc{
