@@ -26,7 +26,7 @@ I used this service to convert text to speech
 ![2023-06-13 (12)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/d8cb4c62-1092-4645-9457-e103704a7085)
 ![2023-06-13 (8)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/fa6251f1-c1bc-4bcf-9d92-c839bf43f023)
 # The core idea of my project:
-My portfolio project aims to showcase my skills and expertise in web development, highlighting my creativity and ability to create engaging and functional websites.
+My portfolio project aims to showcase my skills and expertise in web development, highlighting my creativity and ability to create engaging and functional websites while using Azure services.
 # The problem I am trying to solve and how I am solving it:
 I recognized the increasing need for websites to adapt seamlessly to different devices and screen sizes, which led me to focus on creating responsive websites.
 By employing responsive design techniques and utilizing frameworks, I ensure that the websites I develop provide optimal user experiences across various devices.
