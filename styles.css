@@ -81,31 +81,20 @@ hr {
   top: 100px;
 }
 
-.unique {
-  color: #66BFBF;
-  font-size: 30px;
-  position: absolute;
-  left: 145px;
-  top: 10px;
-}
-
 /* Styles for mobile */
-@media (max-width: 1220px) {
-  .btn11,
-  .btn22 {
+@media (max-width: 767px) {
+  .btn11, .btn22 {
     position: static;
     display: block;
     margin-bottom: 10px;
-    left: 20px;
   }
-
+  
   .unique {
     position: absolute;
     left: 20px;
     top: 20px;
   }
 }
-
 
 .bottomc{
     position: absolute;
