@@ -265,17 +265,15 @@ hr {
   }
 
 @media (max-width: 767px) {
-  /* Styles for mobile devices */
   .btn11 {
     /* Adjust position for mobile */
-    left: 20px;
-    top: 20px;
+    left: 10px;
+    top: 10px;
   }
 
   .btn22 {
     /* Adjust position for mobile */
-    left: 20px;
-    top: 120px;
+    left: 10px;
+    top: 60px;
   }
 }
-
