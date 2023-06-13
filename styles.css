@@ -76,8 +76,16 @@ hr {
 }
 
 .btn22 {
+  position: ab/* Styles for desktop and mobile */
+.btn11 {
   position: absolute;
   left: 10px;
+  top: 60px;
+}
+
+.btn22 {
+  position: absolute;
+  left: 110px;
   top: 60px;
 }
 
@@ -85,9 +93,8 @@ hr {
   color: #66BFBF;
   font-size: 30px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 35px;
+  left: 60px;
+  top: 10px;
 }
 
 .bottomc{
