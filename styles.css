@@ -68,24 +68,26 @@ hr {
     top: 40px;
 }
 
-.unique {
-    color: #66BFBF;
-    font-size: 30px;
-    position: absolute;
-    left: 145px;
-    top: 10px;
-}
-
+/* Styles for desktop and mobile */
 .btn11 {
-    position: absolute;
-    left: 100px;
-    top: 100px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 .btn22 {
-    position: absolute;
-    left: 250px;
-    top: 100px;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}
+
+.unique {
+  color: #66BFBF;
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 35px;
 }
 
 .bottomc{
@@ -263,17 +265,3 @@ hr {
     background-image: linear-gradient(to bottom, #fcf23c, #d9cf0b);
     text-decoration: none;
   }
-
-@media (max-width: 767px) {
-  .btn11 {
-    /* Adjust position for mobile */
-    left: 10px;
-    top: 10px;
-  }
-
-  .btn22 {
-    /* Adjust position for mobile */
-    left: 10px;
-    top: 60px;
-  }
-}
