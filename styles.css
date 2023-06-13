@@ -89,13 +89,13 @@ hr {
     margin-bottom: 10px;
   }
   
-  .unique {
+.unique {
+    color: #66BFBF;
+    font-size: 30px;
     position: absolute;
-    left: 20px;
-    top: 20px;
-  }
+    left: 145px;
+    top: 10px;
 }
-
 
 .bottomc{
     position: absolute;
