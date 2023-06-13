@@ -81,6 +81,14 @@ hr {
   top: 100px;
 }
 
+.unique {
+  color: #66BFBF;
+  font-size: 30px;
+  position: absolute;
+  left: 175px;
+  top: 50px;
+}
+
 /* Styles for mobile */
 @media (max-width: 767px) {
   .btn11, .btn22 {
@@ -89,13 +97,13 @@ hr {
     margin-bottom: 10px;
   }
   
-.unique {
-    color: #66BFBF;
-    font-size: 30px;
+  .unique {
     position: absolute;
-    left: 145px;
-    top: 10px;
+    left: 20px;
+    top: 20px;
+  }
 }
+
 
 .bottomc{
     position: absolute;
