@@ -1,5 +1,11 @@
 # Portfolio
 This website includes all the necessary details about myself and my achievements along with a few ways you can connect with me.
+# Web Technologies Used
+HTML
+CSS
+JavaScript
+# IDE Used 
+VS Code
 # My Website Link: 
 https://zealous-forest-0851fd010.3.azurestaticapps.net
 # Introduction
