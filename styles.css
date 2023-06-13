@@ -68,6 +68,26 @@ hr {
     top: 40px;
 }
 
+.unique {
+    color: #66BFBF;
+    font-size: 30px;
+    position: absolute;
+    left: 145px;
+    top: 10px;
+}
+
+.btn11 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.btn22 {
+    position: absolute;
+    left: 250px;
+    top: 100px;
+}
+
 .bottomc{
     position: absolute;
     left: 150px;
