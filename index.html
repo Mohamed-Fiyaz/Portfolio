@@ -10,7 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quantico&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-container">
+  <div class="top-container">
+  <p class="unique">Text To Speech</p>
+  <button class="btn11" id="playButton">Play Audio</button>
+  <button class="btn22" id="pauseButton">Pause Audio</button>
+
+  <script>
+    var audio = new Audio('Introducer.wav');
+
+    // Function to play the audio
+    function playAudio() {
+      audio.play();
+    }
+
+    // Function to pause the audio
+    function pauseAudio() {
+      audio.pause();
+    }
+
+    // Add click event listeners to the buttons
+    var playButton = document.getElementById('playButton');
+    playButton.addEventListener('click', playAudio);
+
+    var pauseButton = document.getElementById('pauseButton');
+    pauseButton.addEventListener('click', pauseAudio);
+  </script>
         <img class="topc" src="cloud.png" alt="cloud" class="a">    
         <h1>I'm Mohamed Fiyaz.</h1>
         <p class="intro">a programmer.</p>
