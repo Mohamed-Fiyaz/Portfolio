@@ -80,20 +80,10 @@ hr {
   left: 250px;
   top: 100px;
 }
-
-/* Styles for mobile */
-@media (max-width: 767px) {
-  .btn11, .btn22 {
-    position: static;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .unique {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-  }
+.unique {
+  position: absolute;
+  left: 1500px;
+  top: 300px;
 }
 
 .bottomc{
@@ -146,7 +136,6 @@ hr {
     text-align: left;
 
 }
-
 
 .about{
     width: 40%;
