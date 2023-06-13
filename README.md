@@ -29,6 +29,7 @@ I used Azure services such as *Static Web Apps* and *Azure Cognitive Services*
 ![2023-06-13 (10)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/62a2a424-be5e-456b-bad6-34863ce9033b)
 # Cognitive Services
 I used this service to convert text to speech
+
 ![2023-06-13 (12)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/d8cb4c62-1092-4645-9457-e103704a7085)
 ![2023-06-13 (8)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/fa6251f1-c1bc-4bcf-9d92-c839bf43f023)
 
