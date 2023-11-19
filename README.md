@@ -22,16 +22,3 @@ The achievements tab will be opened separately
 ![2023-06-13 (4)](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/280dc521-56b0-4140-acab-c6b8f9e5b7ce)
 # My Contact Details
 ![2023-06-13 (7)](https://github.com/Mohamed-Fiyaz/About_Mohamed_Fiyaz/assets/124451741/199d4cbc-0a80-4946-aa46-78cb4b3dc001)
-# Microsoft Azure Services Used
-I used Azure services such as *Static Web Apps* and *Azure Cognitive Services*
-![2023-06-13 (11)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/8483cb93-638a-4739-abba-8bd68b5d68ed)
-# Static Web App 
-![2023-06-13 (10)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/62a2a424-be5e-456b-bad6-34863ce9033b)
-# Cognitive Services
-I used this service to convert text to speech
-
-![2023-06-13 (12)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/d8cb4c62-1092-4645-9457-e103704a7085)
-
-![2023-06-13 (8)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/fa6251f1-c1bc-4bcf-9d92-c839bf43f023)
-
-![2023-06-14](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/dc49f7d4-c952-4f83-961c-d800362686c1)
