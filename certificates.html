@@ -40,6 +40,12 @@
         </tr>
     </table>
     <div class="footer">
-        <p class="copyright">© 2024 Mohamed Fiyaz.</p>
+        <footer>
+            <p class="copyright">&copy; Mohamed Fiyaz <span id="current-year"></span></p>
+        </footer>
+
+        <script>
+            document.getElementById("current-year").innerText = new Date().getFullYear();
+        </script>
     </div>
 </body>
