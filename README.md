@@ -7,7 +7,7 @@ This website includes all the necessary details about myself and my achievements
 # IDE Used 
 VS Code
 # My Website Link: 
-https://zealous-forest-0851fd010.3.azurestaticapps.net
+https://mohamed-fiyaz.github.io/Portfolio/
 # Introduction
 ![2023-06-13 (13)](https://github.com/Mohamed-Fiyaz/Portfolio/assets/124451741/4b56dd2d-e390-41e3-8b73-683fa00b3bdf)
 # Where I Study
