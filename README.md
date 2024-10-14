@@ -1,4 +1,4 @@
 # Portfolio
-This website includes all the necessary details about myself and my achievements along with a few ways you can connect with me.
+This is my portfolio website dedicated to showcase my skillsets and projects.
 ## My Website Link: 
 https://mohamed-fiyaz.github.io/Portfolio/
