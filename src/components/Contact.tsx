@@ -65,7 +65,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <span className="text-gray-700">
-                    Tiruchirappalli, Tamil Nadu
+                    Tamil Nadu, India
                   </span>
                   </div>
               </div>
