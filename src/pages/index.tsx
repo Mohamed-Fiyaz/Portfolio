@@ -8,6 +8,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollDown from '../components/ScrollDown';
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(true);
@@ -33,6 +34,7 @@ export default function Home() {
       <Head>
         <title>Mohamed Fiyaz | Portfolio</title>
         <meta name="description" content="Mohamed Fiyaz - iOS Developer Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -47,6 +49,7 @@ export default function Home() {
         <Contact />
       </main>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );
