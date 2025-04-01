@@ -14,16 +14,11 @@ const Skills = () => {
   // Detect if device is mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile
+      setIsMobile(window.innerWidth < 768);
     };
     
-    // Check initially
     checkIfMobile();
-    
-    // Add event listener for resize
     window.addEventListener('resize', checkIfMobile);
-    
-    // Cleanup
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
@@ -70,27 +65,64 @@ const Skills = () => {
     },
   ];
 
-  const containerVariants = {
+  // Fade-in for the section title
+  const titleVariants = {
     hidden: { opacity: 0 },
-    visible: {
+    visible: { 
       opacity: 1,
-      transition: {
-        staggerChildren: 0.08, 
-        delayChildren: 0.1,
-        when: "beforeChildren"
+      transition: { duration: 0.6 }
+    }
+  };
+
+  // Grid animation - items appear from different sides
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4, 
-        ease: "easeOut"
-      }
+  // Calculate different entrance directions based on index
+  const getItemVariants = (index) => {
+    // Determine which quadrant the item is in (assuming 2x4 grid on mobile, 4x2 on desktop)
+    const row = Math.floor(index / 4);
+    const col = index % 4;
+    
+    // Create different entrance animations based on position
+    if (col < 2) {
+      return {
+        hidden: { x: -40, opacity: 0, scale: 0.8 },
+        visible: { 
+          x: 0, 
+          opacity: 1, 
+          scale: 1,
+          transition: { 
+            type: "spring", 
+            stiffness: 260, 
+            damping: 20,
+            duration: 0.5
+          }
+        }
+      };
+    } else {
+      return {
+        hidden: { x: 40, opacity: 0, scale: 0.8 },
+        visible: { 
+          x: 0, 
+          opacity: 1, 
+          scale: 1,
+          transition: { 
+            type: "spring", 
+            stiffness: 260, 
+            damping: 20,
+            duration: 0.5
+          }
+        }
+      };
     }
   };
 
@@ -99,32 +131,42 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">My Skills</h2>
-
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
-            variants={containerVariants}
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-10 text-center"
+            variants={titleVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            {skills.map((skill) => (
+            My Skills
+          </motion.h2>
+
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+            variants={gridVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-md transition-all duration-300 flex flex-col items-center"
+                variants={getItemVariants(index)}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
                 whileHover={!isMobile ? {
                   y: -5, 
-                  scale: 1.02, 
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   transition: { duration: 0.2 }
                 } : {}}
               >
                 <div className="w-20 h-20 bg-white rounded-xl overflow-hidden flex items-center justify-center mb-5 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div 
+                    className="absolute inset-0 flex items-center justify-center"
+                    whileHover={!isMobile ? {
+                      rotate: [0, -10, 10, -5, 0],
+                      transition: { duration: 0.5 }
+                    } : {}}
+                  >
                     <Image
                       src={skill.logo}
                       alt={`${skill.name} logo`}
@@ -136,7 +178,7 @@ const Skills = () => {
                         height: '64px',
                       }}
                     />
-                  </div>
+                  </motion.div>
                 </div>
                 <h3 className="font-semibold text-lg text-center">{skill.name}</h3>
                 <p className="text-sm text-gray-500 text-center mt-1">{skill.category}</p>
