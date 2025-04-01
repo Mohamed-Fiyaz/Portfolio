@@ -38,7 +38,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" className="hero-section bg-[#DDA853] will-change-transform">
+        <section id="hero" className="hero-section bg-[#DDA853]">
             <div className="container mx-auto px-4 md:px-12 flex flex-col items-center justify-center min-h-screen pt-20 pb-10">
                 <motion.div 
                     className="w-full flex flex-col lg:flex-row items-center"

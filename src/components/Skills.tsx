@@ -9,15 +9,8 @@ const Skills = () => {
     threshold: 0.1,
   });
   
-  const [hasAnimated, setHasAnimated] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [inView, hasAnimated]);
-
   // Detect if device is mobile
   useEffect(() => {
     const checkIfMobile = () => {
@@ -107,7 +100,7 @@ const Skills = () => {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 15 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="max-w-6xl mx-auto"
         >
@@ -117,7 +110,7 @@ const Skills = () => {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
-            animate={hasAnimated ? "visible" : "hidden"}
+            animate={inView ? "visible" : "hidden"}
           >
             {skills.map((skill) => (
               <motion.div
