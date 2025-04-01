@@ -4,9 +4,16 @@ import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaApple } from 'react-icons/fa';
 
 const Projects = () => {
-  const [ref, inView] = useInView({
+  const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
+    rootMargin: '0px 0px -10% 0px', 
+  });
+
+  const [projectsRef, projectsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0,
+    rootMargin: '-200px 0px 0px 0px', 
   });
 
   const iosProjects = [
@@ -66,14 +73,24 @@ const Projects = () => {
   return (
     <section id="projects" className="section bg-white py-12 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          ref={ref}
+        {/* Title with separate ref */}
+        <motion.h2
+          ref={titleRef}
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-10 text-center"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-10 text-center">My Projects</h2>
+          My Projects
+        </motion.h2>
 
+        {/* Projects content with separate ref */}
+        <motion.div
+          ref={projectsRef}
+          initial={{ opacity: 0 }}
+          animate={projectsInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.3 }}
+        >
           {/* iOS Applications */}
           <div className="mb-10 sm:mb-16">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-8 border-b-2 border-hero-yellow pb-2">iOS Applications</h3>
@@ -82,7 +99,7 @@ const Projects = () => {
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex flex-col h-full"
                 >
@@ -152,7 +169,7 @@ const Projects = () => {
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
                   className="flex flex-col h-full"
                 >
