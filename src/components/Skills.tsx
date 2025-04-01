@@ -84,7 +84,6 @@ const Skills = () => {
   };
 
   const getItemVariants = (index: number) => {
-    const row = Math.floor(index / 4);
     const col = index % 4;
     
     if (col < 2) {
@@ -98,7 +97,8 @@ const Skills = () => {
             type: "spring", 
             stiffness: 260, 
             damping: 20,
-            duration: 0.5
+            duration: 0.5,
+            when: "beforeChildren"
           }
         }
       };
@@ -113,7 +113,8 @@ const Skills = () => {
             type: "spring", 
             stiffness: 260, 
             damping: 20,
-            duration: 0.5
+            duration: 0.5,
+            when: "beforeChildren"
           }
         }
       };
@@ -146,33 +147,49 @@ const Skills = () => {
               <motion.div
                 key={skill.name}
                 variants={getItemVariants(index)}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
+                className="bg-white p-6 rounded-xl shadow-md transition-all duration-300 flex flex-col items-center"
                 whileHover={!isMobile ? {
                   y: -5, 
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  transition: { duration: 0.2 }
-                } : {}}
+                } : undefined}
               >
                 <div className="w-20 h-20 bg-white rounded-xl overflow-hidden flex items-center justify-center mb-5 relative">
-                  <motion.div 
-                    className="absolute inset-0 flex items-center justify-center"
-                    whileHover={!isMobile ? {
-                      rotate: [0, -10, 10, -5, 0],
-                      transition: { duration: 0.5 }
-                    } : {}}
-                  >
-                    <Image
-                      src={skill.logo}
-                      alt={`${skill.name} logo`}
-                      width={64}
-                      height={64}
-                      className="object-contain"
-                      style={{
-                        width: '64px',
-                        height: '64px',
+                  {/* Logo animation only on non-mobile */}
+                  {isMobile ? (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Image
+                        src={skill.logo}
+                        alt={`${skill.name} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                        style={{
+                          width: '64px',
+                          height: '64px',
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <motion.div 
+                      className="absolute inset-0 flex items-center justify-center"
+                      whileHover={{
+                        rotate: [0, -10, 10, -5, 0],
+                        transition: { duration: 0.5 }
                       }}
-                    />
-                  </motion.div>
+                    >
+                      <Image
+                        src={skill.logo}
+                        alt={`${skill.name} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                        style={{
+                          width: '64px',
+                          height: '64px',
+                        }}
+                      />
+                    </motion.div>
+                  )}
                 </div>
                 <h3 className="font-semibold text-lg text-center">{skill.name}</h3>
                 <p className="text-sm text-gray-500 text-center mt-1">{skill.category}</p>
