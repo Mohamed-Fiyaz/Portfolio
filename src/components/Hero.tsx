@@ -9,17 +9,17 @@ const Hero = () => {
         const typingTimeout = setTimeout(() => {
             setShowTyping(true);
         }, 200);
-        
+
         return () => clearTimeout(typingTimeout);
     }, []);
 
     const [isMobile, setIsMobile] = useState(false);
-    
+
     useEffect(() => {
         const checkIfMobile = () => {
             setIsMobile(window.innerWidth < 768);
         };
-        
+
         checkIfMobile();
         window.addEventListener('resize', checkIfMobile);
         return () => window.removeEventListener('resize', checkIfMobile);
@@ -36,7 +36,7 @@ const Hero = () => {
             }
         }
     };
-    
+
     const imageVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: {
@@ -48,7 +48,7 @@ const Hero = () => {
             }
         }
     };
-    
+
     const headingVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: {
@@ -60,7 +60,7 @@ const Hero = () => {
             }
         }
     };
-    
+
     const paragraphVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -72,7 +72,7 @@ const Hero = () => {
             }
         }
     };
-    
+
     const socialVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -83,7 +83,7 @@ const Hero = () => {
             }
         }
     };
-    
+
     const iconVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: {
@@ -99,7 +99,7 @@ const Hero = () => {
     return (
         <section id="hero" className="hero-section bg-[#DDA853]">
             <div className="container mx-auto px-4 md:px-12 flex flex-col items-center justify-center min-h-screen pt-20 pb-10">
-                <motion.div 
+                <motion.div
                     className="w-full flex flex-col lg:flex-row items-center"
                     variants={containerVariants}
                     initial="hidden"
@@ -114,7 +114,7 @@ const Hero = () => {
                             src="profile.png"
                             alt="Profile Picture"
                             className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-lg object-cover shadow-md"
-                            whileHover={{ 
+                            whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.3 }
                             }}
@@ -123,14 +123,15 @@ const Hero = () => {
 
                     {/* Text and Social Media - Below image on small/medium screens, on left for large screens */}
                     <div className="w-full lg:w-1/2 lg:order-1 text-center lg:text-left lg:pr-8">
-                        <motion.h1 
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 break-words"
+                        <motion.h1
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 whitespace-nowrap"
                             variants={headingVariants}
                         >
-                            Hi, I&apos;m Mohamed Fiyaz
+                            Hi, I'm Mohamed Fiyaz
                         </motion.h1>
 
-                        <motion.div 
+
+                        <motion.div
                             className="text-lg sm:text-xl md:text-2xl mb-6 min-h-8"
                             variants={paragraphVariants}
                         >
@@ -140,7 +141,7 @@ const Hero = () => {
                             )}
                         </motion.div>
 
-                        <motion.p 
+                        <motion.p
                             className="text-base sm:text-lg mb-6"
                             variants={paragraphVariants}
                         >
@@ -148,15 +149,15 @@ const Hero = () => {
                         </motion.p>
 
                         {/* Social Media Icons */}
-                        <motion.div 
+                        <motion.div
                             className="flex justify-center lg:justify-start space-x-6 mb-6"
                             variants={socialVariants}
                         >
-                            <motion.a 
-                                href="mailto:mohamed-fiyaz@outlook.com" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="text-gray-900 hover:text-gray-700 transition-colors" 
+                            <motion.a
+                                href="mailto:mohamed-fiyaz@outlook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-900 hover:text-gray-700 transition-colors"
                                 title="Email me"
                                 variants={iconVariants}
                                 whileHover={{ scale: 1.2, rotate: 5 }}
@@ -167,11 +168,11 @@ const Hero = () => {
                                 </svg>
                             </motion.a>
 
-                            <motion.a 
-                                href="https://www.linkedin.com/in/mohamed-fiyaz-8b9146254/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="text-gray-900 hover:text-gray-700 transition-colors" 
+                            <motion.a
+                                href="https://www.linkedin.com/in/mohamed-fiyaz-8b9146254/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-900 hover:text-gray-700 transition-colors"
                                 title="LinkedIn"
                                 variants={iconVariants}
                                 whileHover={{ scale: 1.2, rotate: 5 }}
@@ -182,11 +183,11 @@ const Hero = () => {
                                 </svg>
                             </motion.a>
 
-                            <motion.a 
-                                href="https://github.com/Mohamed-Fiyaz" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="text-gray-900 hover:text-gray-700 transition-colors" 
+                            <motion.a
+                                href="https://github.com/Mohamed-Fiyaz"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-900 hover:text-gray-700 transition-colors"
                                 title="GitHub"
                                 variants={iconVariants}
                                 whileHover={{ scale: 1.2, rotate: 5 }}
