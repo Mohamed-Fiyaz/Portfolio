@@ -20,26 +20,16 @@ const About = () => {
 
           <div className="max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I am a passionate iOS developer with a strong foundation in Swift and UIKit. My journey in programming began during my undergraduate studies, where I discovered my love for creating beautiful and functional mobile applications.
+              I am a native iOS developer with a strong foundation in Swift and UIKit. I got interested in programming during my high school studies, and during my undergraduate studies, I discovered my love for creating beautiful and functional mobile applications and websites.
             </p>
 
             <p className="text-lg mb-6">
-              As an indie developer, I enjoy working on projects that challenge me and allow me to grow my skills. I believe in writing clean, maintainable code and creating intuitive user experiences.
+              As an indie developer, I enjoy working on projects that challenge me and allow me to learn new technologies while developing them. I love building projects from scratch, seeing my Figma design come to life through code is a treat.
             </p>
 
             <p className="text-lg mb-6">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community.
+              When I'm not coding, I spend my time reading comics, playing table tennis, and learning new languages. Currently, I'm learning German.
             </p>
-
-            <div className="mt-10 text-center">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                className="inline-block bg-hero-yellow px-6 py-3 rounded-md text-gray-800 font-medium hover:bg-opacity-80 transition-all"
-              >
-                Download Resume
-              </a>
-            </div>
           </div>
         </motion.div>
       </div>
