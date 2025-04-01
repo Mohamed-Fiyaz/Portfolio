@@ -39,7 +39,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      
+
       <main>
         <Hero />
         {showScroll && <ScrollDown />}

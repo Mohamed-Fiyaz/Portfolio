@@ -30,16 +30,16 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
+
     // For debugging - log the email value
     console.log("Submitting with email:", formData.email);
-    
+
     try {
       // Your EmailJS service ID, template ID, and public key
       const serviceId = 'service_guny73m';
       const templateId = 'template_9pjhb2b';
       const publicKey = 'yEGQo7TXFbfhNfOXh';
-      
+
       // Create template parameters exactly as the template expects
       const templateParams = {
         name: formData.name,
@@ -48,13 +48,13 @@ const Contact = () => {
         message: formData.message,
         to_name: 'Mohamed Fiyaz',
       };
-      
+
       // For debugging - log the parameters
       console.log("Template parameters:", templateParams);
-      
+
       const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
       console.log("EmailJS response:", response);
-      
+
       // Reset form after successful submission
       setFormData({ name: '', email: '', message: '' });
       setSubmitStatus({
@@ -83,13 +83,13 @@ const Contact = () => {
           className="w-full"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-10 text-center">Get In Touch</h2>
-          
+
           <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
             <div className="order-2 md:order-1">
               <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Contact Information</h3>
               <p className="mb-4 text-sm sm:text-base">Feel free to reach out to me for collaboration, job opportunities, or just to say hello!</p>
-              
+
               <div className="mt-6">
                 <div className="flex items-center mb-5">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-hero-yellow rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
@@ -102,7 +102,7 @@ const Contact = () => {
                     mohamed-fiyaz@outlook.com
                   </a>
                 </div>
-                
+
                 <div className="flex items-center mb-5">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-hero-yellow rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -115,7 +115,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div className="order-1 md:order-2 mb-8 md:mb-0">
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
@@ -133,7 +133,7 @@ const Contact = () => {
                     disabled={isSubmitting}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Email</label>
                   <input
@@ -148,7 +148,7 @@ const Contact = () => {
                     disabled={isSubmitting}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Message</label>
                   <textarea
@@ -163,13 +163,13 @@ const Contact = () => {
                     disabled={isSubmitting}
                   ></textarea>
                 </div>
-                
+
                 {submitStatus && (
                   <div className={`p-3 rounded-md ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                     {submitStatus.message}
                   </div>
                 )}
-                
+
                 <button
                   type="submit"
                   className={`bg-hero-yellow px-4 py-2 sm:px-6 sm:py-3 rounded-md text-gray-800 text-sm sm:text-base font-medium hover:bg-opacity-80 transition-all w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}

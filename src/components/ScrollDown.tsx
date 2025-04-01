@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const ScrollDown = () => {
   return (
-    <motion.div 
+    <motion.div
       className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

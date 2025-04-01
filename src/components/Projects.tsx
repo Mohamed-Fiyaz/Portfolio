@@ -105,10 +105,10 @@ const Projects = () => {
 
                     {/* Links Section */}
                     <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4">
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
                         aria-label={`View ${project.title} on GitHub`}
                       >
@@ -117,10 +117,10 @@ const Projects = () => {
                         <span className="sm:hidden">GitHub</span>
                       </a>
                       {project.appStore && (
-                        <a 
-                          href={project.appStore} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href={project.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
                           aria-label={`View ${project.title} on App Store`}
                         >
@@ -174,10 +174,10 @@ const Projects = () => {
 
                       {/* Links Section */}
                       <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
                           aria-label={`View ${project.title} on GitHub`}
                         >
@@ -186,10 +186,10 @@ const Projects = () => {
                           <span className="sm:hidden">GitHub</span>
                         </a>
                         {project.website && (
-                          <a 
-                            href={project.website} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                          <a
+                            href={project.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
                             aria-label={`Visit ${project.title} website`}
                           >

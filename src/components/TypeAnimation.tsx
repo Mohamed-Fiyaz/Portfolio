@@ -53,7 +53,7 @@ const TypeAnimation = ({
       )}
     </div>
   );
-  
+
 };
 
 export default TypeAnimation;
