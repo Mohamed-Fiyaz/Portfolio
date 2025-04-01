@@ -121,12 +121,38 @@ const Skills = () => {
     }
   };
 
-  const mobileItemVariants = {
+  const mobileGridVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { duration: 0.5 }
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
     }
+  };
+
+  const getMobileItemVariants = (index: number) => {
+    const isEvenColumn = index % 2 === 0;
+    
+    return {
+      hidden: { 
+        y: isEvenColumn ? 30 : -30, 
+        opacity: 0,
+        scale: 0.9
+      },
+      visible: { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1,
+        transition: { 
+          type: "spring", 
+          stiffness: 200, 
+          damping: 25,
+          duration: 0.4
+        }
+      }
+    };
   };
 
   return (
@@ -146,17 +172,25 @@ const Skills = () => {
           </motion.h2>
 
           {isMobile ? (
-            <div className="grid grid-cols-2 gap-4">
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              variants={mobileGridVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
                   className="bg-white p-4 rounded-xl shadow-md flex flex-col items-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  variants={getMobileItemVariants(index)}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <div className="w-16 h-16 bg-white rounded-xl overflow-hidden flex items-center justify-center mb-3 relative">
-                    <div className="flex items-center justify-center">
+                    <motion.div 
+                      className="flex items-center justify-center"
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <Image
                         src={skill.logo}
                         alt={`${skill.name} logo`}
@@ -168,13 +202,13 @@ const Skills = () => {
                           height: '48px',
                         }}
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   <h3 className="font-semibold text-base text-center">{skill.name}</h3>
                   <p className="text-xs text-gray-500 text-center mt-1">{skill.category}</p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           ) : (
             <motion.div
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
