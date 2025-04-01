@@ -11,7 +11,6 @@ const Skills = () => {
   
   const [isMobile, setIsMobile] = useState(false);
   
-  // Detect if device is mobile
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -65,7 +64,6 @@ const Skills = () => {
     },
   ];
 
-  // Fade-in for the section title
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -74,7 +72,6 @@ const Skills = () => {
     }
   };
 
-  // Grid animation - items appear from different sides
   const gridVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -86,13 +83,10 @@ const Skills = () => {
     }
   };
 
-  // Calculate different entrance directions based on index
-  const getItemVariants = (index) => {
-    // Determine which quadrant the item is in (assuming 2x4 grid on mobile, 4x2 on desktop)
+  const getItemVariants = (index: number) => {
     const row = Math.floor(index / 4);
     const col = index % 4;
     
-    // Create different entrance animations based on position
     if (col < 2) {
       return {
         hidden: { x: -40, opacity: 0, scale: 0.8 },
