@@ -20,7 +20,7 @@ const About = () => {
 
           <div className="max-w-3xl mx-auto">
             <p className="text-lg mb-6">
-              I am a native iOS developer with a strong foundation in Swift and UIKit. I got interested in programming during my high school studies, and during my undergraduate studies, I discovered my love for creating beautiful and functional mobile applications and websites.
+              I am a native iOS developer with a strong foundation in Swift and SwiftUI. I got interested in programming during my high school studies, and during my undergraduate studies, I discovered my love for creating beautiful and functional mobile applications and websites.
             </p>
 
             <p className="text-lg mb-6">
