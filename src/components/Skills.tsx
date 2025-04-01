@@ -10,12 +10,29 @@ const Skills = () => {
   });
   
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
   useEffect(() => {
     if (inView && !hasAnimated) {
       setHasAnimated(true);
     }
   }, [inView, hasAnimated]);
+
+  // Detect if device is mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Common breakpoint for mobile
+    };
+    
+    // Check initially
+    checkIfMobile();
+    
+    // Add event listener for resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const skills = [
     {
@@ -106,12 +123,12 @@ const Skills = () => {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
-                whileHover={{
+                className="bg-white p-6 rounded-xl shadow-md transition-all duration-300 flex flex-col items-center"
+                whileHover={!isMobile ? {
                   y: -5, 
                   scale: 1.02, 
                   transition: { duration: 0.2 }
-                }}
+                } : {}}
               >
                 <div className="w-20 h-20 bg-white rounded-xl overflow-hidden flex items-center justify-center mb-5 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
