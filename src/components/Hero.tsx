@@ -13,6 +13,18 @@ const Hero = () => {
         return () => clearTimeout(typingTimeout);
     }, []);
 
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => {
+        const checkIfMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        checkIfMobile();
+        window.addEventListener('resize', checkIfMobile);
+        return () => window.removeEventListener('resize', checkIfMobile);
+    }, []);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -37,6 +49,16 @@ const Hero = () => {
         }
     };
 
+    const mobileVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 0.3
+            }
+        }
+    };
+
     return (
         <section id="hero" className="hero-section bg-[#DDA853]">
             <div className="container mx-auto px-4 md:px-12 flex flex-col items-center justify-center min-h-screen pt-20 pb-10">
@@ -49,8 +71,8 @@ const Hero = () => {
                     {/* Image - On top for small/medium screens, on right for large screens */}
                     <motion.div
                         className="w-full lg:w-1/2 lg:order-2 flex justify-center lg:justify-end mb-8 lg:mb-0"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                     >
                         <img
@@ -64,8 +86,8 @@ const Hero = () => {
                     <div className="w-full lg:w-1/2 lg:order-1 text-center lg:text-left lg:pr-8">
                         <motion.h1 
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 break-words"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{ duration: 0.3 }}
                         >
                             Hi, I&apos;m Mohamed Fiyaz
@@ -84,8 +106,8 @@ const Hero = () => {
 
                         <motion.p 
                             className="text-base sm:text-lg mb-6"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{ duration: 0.3, delay: 0.1 }}
                         >
                             Currently pursuing my Bachelor's in Computer Science and Engineering from SRM Institute of Science and Technology.
@@ -94,8 +116,8 @@ const Hero = () => {
                         {/* Social Media Icons */}
                         <motion.div 
                             className="flex justify-center lg:justify-start space-x-6 mb-6"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             transition={{ duration: 0.3, delay: 0.15 }}
                         >
                             <a href="mailto:mohamed-fiyaz@outlook.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-gray-700 transition-colors" title="Email me">
