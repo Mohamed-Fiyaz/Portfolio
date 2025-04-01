@@ -18,7 +18,6 @@ body {
   @apply py-16 px-4 md:px-12 lg:px-24;
 }
 
-/* Fade-in animation for sections */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }

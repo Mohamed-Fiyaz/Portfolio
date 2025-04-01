@@ -31,31 +31,26 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // For debugging - log the email value
     console.log("Submitting with email:", formData.email);
 
     try {
-      // Your EmailJS service ID, template ID, and public key
-      const serviceId = 'service_guny73m';
-      const templateId = 'template_9pjhb2b';
-      const publicKey = 'yEGQo7TXFbfhNfOXh';
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-      // Create template parameters exactly as the template expects
       const templateParams = {
         name: formData.name,
         time: new Date().toLocaleString(),
-        from_email: formData.email, // This must be exact match to {{from_email}}
+        from_email: formData.email, 
         message: formData.message,
         to_name: 'Mohamed Fiyaz',
       };
 
-      // For debugging - log the parameters
       console.log("Template parameters:", templateParams);
 
       const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
       console.log("EmailJS response:", response);
 
-      // Reset form after successful submission
       setFormData({ name: '', email: '', message: '' });
       setSubmitStatus({
         success: true,

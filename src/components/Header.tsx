@@ -27,13 +27,12 @@ const Header = () => {
   // Navigation items
   const navItems = ['About', 'Skills', 'Projects', 'Contact'];
 
-  // Instant scroll settings
   const scrollSettings = {
     spy: true,
-    smooth: false, // Disables smooth scrolling for instant movement
+    smooth: false, 
     offset: -70,
-    duration: 0, // Ensures the scrolling happens instantly
-    delay: 0, // Explicitly set delay to 0
+    duration: 0, 
+    delay: 0, 
     isDynamic: true,
     ignoreCancelEvents: false
   };
