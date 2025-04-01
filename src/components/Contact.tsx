@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -14,18 +15,61 @@ const Contact = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    alert('Thank you for your message! I will get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    // For debugging - log the email value
+    console.log("Submitting with email:", formData.email);
+    
+    try {
+      // Your EmailJS service ID, template ID, and public key
+      const serviceId = 'service_guny73m';
+      const templateId = 'template_9pjhb2b';
+      const publicKey = 'yEGQo7TXFbfhNfOXh';
+      
+      // Create template parameters exactly as the template expects
+      const templateParams = {
+        name: formData.name,
+        time: new Date().toLocaleString(),
+        from_email: formData.email, // This must be exact match to {{from_email}}
+        message: formData.message,
+        to_name: 'Mohamed Fiyaz',
+      };
+      
+      // For debugging - log the parameters
+      console.log("Template parameters:", templateParams);
+      
+      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      console.log("EmailJS response:", response);
+      
+      // Reset form after successful submission
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus({
+        success: true,
+        message: 'Thank you for your message! I will get back to you soon.',
+      });
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitStatus({
+        success: false,
+        message: 'Failed to send message. Please try again later or contact me directly at mohamed-fiyaz@outlook.com',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -86,6 +130,7 @@ const Contact = () => {
                     required
                     className="w-full px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-hero-yellow focus:border-transparent"
                     placeholder="Your name"
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -100,6 +145,7 @@ const Contact = () => {
                     required
                     className="w-full px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-hero-yellow focus:border-transparent"
                     placeholder="your.email@example.com"
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -114,14 +160,22 @@ const Contact = () => {
                     rows={4}
                     className="w-full px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-hero-yellow focus:border-transparent"
                     placeholder="Write your message here..."
+                    disabled={isSubmitting}
                   ></textarea>
                 </div>
                 
+                {submitStatus && (
+                  <div className={`p-3 rounded-md ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+                
                 <button
                   type="submit"
-                  className="bg-hero-yellow px-4 py-2 sm:px-6 sm:py-3 rounded-md text-gray-800 text-sm sm:text-base font-medium hover:bg-opacity-80 transition-all w-full"
+                  className={`bg-hero-yellow px-4 py-2 sm:px-6 sm:py-3 rounded-md text-gray-800 text-sm sm:text-base font-medium hover:bg-opacity-80 transition-all w-full ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

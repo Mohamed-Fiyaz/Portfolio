@@ -47,7 +47,7 @@ const Header = () => {
         <ScrollLink
           to="hero"
           {...scrollSettings}
-          className={`text-2xl sm:text-3xl md:text-4xl font-bold cursor-pointer ${
+          className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold cursor-pointer ${
             isScrolled ? 'text-gray-900' : 'text-[#F5EEDC]'
           }`}
           style={{ fontFamily: '"Patrick Hand", cursive' }}
@@ -57,13 +57,13 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center justify-center">
-          <ul className="flex space-x-12">
+          <ul className="flex space-x-6 lg:space-x-12">
             {navItems.map((item) => (
               <li key={item}>
                 <ScrollLink
                   to={item.toLowerCase()}
                   {...scrollSettings}
-                  className={`text-xl md:text-2xl font-medium cursor-pointer transition-colors ${
+                  className={`text-base lg:text-xl xl:text-2xl font-medium cursor-pointer transition-colors ${
                     isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-[#F5EEDC] hover:text-gray-300'
                   }`}
                   style={{ fontFamily: '"Puritan", sans-serif' }}
