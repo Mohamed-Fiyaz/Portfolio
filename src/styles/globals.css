@@ -43,3 +43,16 @@ body {
 .animate-blink {
   animation: blink 1s infinite;
 }
+
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.min-h-8 {
+  min-height: 2rem;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

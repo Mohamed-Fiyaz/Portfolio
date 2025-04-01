@@ -1,12 +1,21 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const Skills = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  
+  const [hasAnimated, setHasAnimated] = useState(false);
+  
+  useEffect(() => {
+    if (inView && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [inView, hasAnimated]);
 
   const skills = [
     {
@@ -56,18 +65,20 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: 0.08, 
+        delayChildren: 0.1,
+        when: "beforeChildren"
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4, 
         ease: "easeOut"
       }
     }
@@ -78,9 +89,9 @@ const Skills = () => {
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+          transition={{ duration: 0.5 }}
           className="max-w-6xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">My Skills</h2>
@@ -89,7 +100,7 @@ const Skills = () => {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            animate={hasAnimated ? "visible" : "hidden"}
           >
             {skills.map((skill) => (
               <motion.div
@@ -97,8 +108,8 @@ const Skills = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center"
                 whileHover={{
-                  y: -8,
-                  scale: 1.03,
+                  y: -5, 
+                  scale: 1.02, 
                   transition: { duration: 0.2 }
                 }}
               >
