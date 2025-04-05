@@ -30,10 +30,10 @@ const Header = () => {
 
   const scrollSettings = {
     spy: true,
-    smooth: false, 
+    smooth: false,
     offset: -70,
-    duration: 0, 
-    delay: 0, 
+    duration: 0,
+    delay: 0,
     isDynamic: true,
     ignoreCancelEvents: false
   };
@@ -67,7 +67,9 @@ const Header = () => {
                   <ScrollLink
                     to={item.toLowerCase()}
                     {...scrollSettings}
-                    className={`text-base lg:text-xl xl:text-2xl font-medium cursor-pointer transition-colors ${isScrolled ? 'text-gray-900 hover:text-gray-600' : 'text-[#F5EEDC] hover:text-gray-300'
+                    className={`text-base lg:text-xl xl:text-2xl font-medium cursor-pointer transition-colors ${isScrolled
+                        ? 'text-gray-900 hover:text-[#DDA853]'
+                        : 'text-[#F5EEDC] hover:text-white'
                       }`}
                     style={{ fontFamily: '"Puritan", sans-serif' }}
                   >
