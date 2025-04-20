@@ -8,35 +8,46 @@ const Skills = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-  
+
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkIfMobile();
     window.addEventListener('resize', checkIfMobile);
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
   const skills = [
+    // Mobile Development
     { name: 'Swift', logo: '/swift.png', category: 'Mobile Development' },
     { name: 'UIKit', logo: '/uikit.png', category: 'iOS Framework' },
     { name: 'SwiftUI', logo: '/swiftui.png', category: 'iOS Framework' },
+    { name: 'ARKit', logo: '/arkit.png', category: 'iOS Framework' },
     { name: 'SwiftData', logo: '/swiftdata.png', category: 'Database' },
+    { name: 'XCTest', logo: '/xctest.png', category: 'Testing' },
+
+    // Backend & Database
     { name: 'Firebase', logo: '/firebase.png', category: 'Backend Service' },
     { name: 'PostgreSQL', logo: '/postgresql.png', category: 'Database' },
     { name: 'Node.js', logo: '/nodejs.png', category: 'Backend' },
     { name: 'Express', logo: '/express.png', category: 'Backend Framework' },
+
+    // Other Tools
+    { name: 'Git', logo: '/git.png', category: 'Version Control' },
+    { name: 'Figma', logo: '/figma.png', category: 'UI/UX Design Tool' },
   ];
+
+
 
   const fadeInVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       transition: { duration: 0.4, ease: 'easeOut' }
     }
   };
@@ -45,7 +56,7 @@ const Skills = () => {
     <section id="skills" className="section bg-cream py-16 mb-16">
       <div className="container mx-auto px-4">
         <motion.div ref={ref} className="max-w-6xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold mb-10 text-center"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -60,7 +71,7 @@ const Skills = () => {
             animate={inView ? "visible" : "hidden"}
             variants={{
               hidden: { opacity: 0 },
-              visible: { 
+              visible: {
                 opacity: 1,
                 transition: { staggerChildren: 0.1, delayChildren: 0.2 }
               }
