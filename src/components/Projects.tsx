@@ -24,14 +24,16 @@ const Projects = () => {
       imageSrc: '/noteworthy.png',
       github: 'https://github.com/Mohamed-Fiyaz/NoteWorthy',
       appStore: '',
+      landingPage: '',
     },
     {
-      title: 'SRM Calculator',
-      description: 'An app that helps students of SRM University calculate their GPA without remembering total credit points—just input grades.',
+      title: 'What\'s My GPA?',
+      description: 'An app that helps students of SRM IST calculate their GPA without remembering total credit points, just input grades.',
       technologies: ['Swift', 'SwiftUI'],
-      imageSrc: '/srmcalculator.png',
-      github: 'https://github.com/Mohamed-Fiyaz/SRMCalculator',
+      imageSrc: '/whatsmygpa.png',
+      github: '',
       appStore: '',
+      landingPage: 'https://whatsmygpa.vercel.app',
     },
     {
       title: 'ThiruVazhi',
@@ -40,6 +42,7 @@ const Projects = () => {
       imageSrc: '/thiruvazhi.png',
       github: 'https://github.com/Mohamed-Fiyaz/ThiruVazhi',
       appStore: '',
+      landingPage: '',
     },
   ];
 
@@ -121,18 +124,32 @@ const Projects = () => {
                     <p className="text-gray-600 text-sm sm:text-base flex-grow mb-4">{project.description}</p>
 
                     {/* Links Section */}
-                    <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
-                        aria-label={`View ${project.title} on GitHub`}
-                      >
-                        <FaGithub size={18} />
-                        <span className="hidden sm:inline">View on GitHub</span>
-                        <span className="sm:hidden">GitHub</span>
-                      </a>
+                    <div className="grid grid-cols-1 gap-2 mb-3 sm:mb-4">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
+                          aria-label={`View ${project.title} on GitHub`}
+                        >
+                          <FaGithub size={18} />
+                          <span className="hidden sm:inline">View on GitHub</span>
+                          <span className="sm:hidden">GitHub</span>
+                        </a>
+                      )}
+                      {project.landingPage && (
+                        <a
+                          href={project.landingPage}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
+                          aria-label={`View ${project.title} landing page`}
+                        >
+                          <FaExternalLinkAlt size={16} />
+                          <span>Landing Page</span>
+                        </a>
+                      )}
                       {project.appStore && (
                         <a
                           href={project.appStore}
@@ -191,17 +208,19 @@ const Projects = () => {
 
                       {/* Links Section */}
                       <div className="flex flex-wrap gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
-                          aria-label={`View ${project.title} on GitHub`}
-                        >
-                          <FaGithub size={18} />
-                          <span className="hidden sm:inline">View on GitHub</span>
-                          <span className="sm:hidden">GitHub</span>
-                        </a>
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
+                            aria-label={`View ${project.title} on GitHub`}
+                          >
+                            <FaGithub size={18} />
+                            <span className="hidden sm:inline">View on GitHub</span>
+                            <span className="sm:hidden">GitHub</span>
+                          </a>
+                        )}
                         {project.website && (
                           <a
                             href={project.website}
