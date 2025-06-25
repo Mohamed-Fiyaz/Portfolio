@@ -18,15 +18,6 @@ const Projects = () => {
 
   const iosProjects = [
     {
-      title: 'NoteWorthy',
-      description: 'An AI-powered notes taking app with Q&A generation capabilities, note summarization, and doubt clarification using AI.',
-      technologies: ['Swift', 'SwiftUI', 'Firebase', 'Gemini Flash'],
-      imageSrc: '/noteworthy.png',
-      github: 'https://github.com/Mohamed-Fiyaz/NoteWorthy',
-      appStore: '',
-      landingPage: '',
-    },
-    {
       title: 'What\'s My GPA?',
       description: 'An app that helps students of SRM IST calculate their GPA without remembering total credit points, just input grades.',
       technologies: ['Swift', 'SwiftUI'],
@@ -34,6 +25,15 @@ const Projects = () => {
       github: '',
       appStore: 'https://apps.apple.com/us/app/whats-my-gpa/id6747209109',
       landingPage: 'https://whatsmygpa.vercel.app',
+    },
+    {
+      title: 'NoteWorthy',
+      description: 'An AI-powered notes taking app with Q&A generation capabilities, note summarization, and doubt clarification using AI.',
+      technologies: ['Swift', 'SwiftUI', 'Firebase', 'Gemini Flash'],
+      imageSrc: '/noteworthy.png',
+      github: 'https://github.com/Mohamed-Fiyaz/NoteWorthy',
+      appStore: '',
+      landingPage: '',
     },
     {
       title: 'ThiruVazhi',
