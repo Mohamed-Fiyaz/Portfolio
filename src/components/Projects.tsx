@@ -7,13 +7,13 @@ const Projects = () => {
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-    rootMargin: '0px 0px -10% 0px', 
+    rootMargin: '0px 0px -10% 0px',
   });
 
   const [projectsRef, projectsInView] = useInView({
     triggerOnce: true,
     threshold: 0,
-    rootMargin: '-200px 0px 0px 0px', 
+    rootMargin: '-200px 0px 0px 0px',
   });
 
   const iosProjects = [
@@ -32,7 +32,7 @@ const Projects = () => {
       technologies: ['Swift', 'SwiftUI'],
       imageSrc: '/whatsmygpa.png',
       github: '',
-      appStore: '',
+      appStore: 'https://apps.apple.com/us/app/whats-my-gpa/id6747209109',
       landingPage: 'https://whatsmygpa.vercel.app',
     },
     {
@@ -138,18 +138,7 @@ const Projects = () => {
                           <span className="sm:hidden">GitHub</span>
                         </a>
                       )}
-                      {project.landingPage && (
-                        <a
-                          href={project.landingPage}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
-                          aria-label={`View ${project.title} landing page`}
-                        >
-                          <FaExternalLinkAlt size={16} />
-                          <span>Landing Page</span>
-                        </a>
-                      )}
+
                       {project.appStore && (
                         <a
                           href={project.appStore}
@@ -160,6 +149,18 @@ const Projects = () => {
                         >
                           <FaApple size={18} />
                           <span>App Store</span>
+                        </a>
+                      )}
+                      {project.landingPage && (
+                        <a
+                          href={project.landingPage}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 sm:gap-2 text-gray-800 hover:text-black text-sm sm:text-base"
+                          aria-label={`View ${project.title} landing page`}
+                        >
+                          <FaExternalLinkAlt size={16} />
+                          <span>Landing Page</span>
                         </a>
                       )}
                     </div>
