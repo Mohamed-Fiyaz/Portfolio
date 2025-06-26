@@ -45,12 +45,12 @@ const About = () => {
               </p>
 
               <p className="text-lg mb-6">
-                As an indie developer, I enjoy working on projects that challenge me and allow me to learn new technologies while developing them. I love building projects from scratch, seeing my Figma design come to life through code is a treat. I believe great apps are not just built — they're crafted. I obsess over little details because users feel them, even if they don’t see them.
+                As an indie developer, I enjoy working on projects that challenge me and allow me to learn new technologies while developing them. I love building projects from scratch, seeing my Figma design come to life through code is a treat. I believe great apps are not just built, they're crafted. I obsess over little details because users feel them, even if they don’t see them.
               </p>
 
               <p className="text-lg mb-6">
                 When I'm not coding, I spend my time reading comics, playing table tennis, and learning new languages. Currently, I'm learning German. <br />
-                P.S. I'm also a huge Star Wars geek — just had to put that out there.
+                P.S. I'm also a huge Star Wars geek, just had to put that out there.
               </p>
             </div>
           </div>
