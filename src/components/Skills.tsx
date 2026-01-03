@@ -28,7 +28,7 @@ const Skills = () => {
     { name: 'SwiftUI', logo: '/swiftui.png', category: 'iOS Framework' },
     { name: 'ARKit', logo: '/arkit.png', category: 'iOS Framework' },
     { name: 'SwiftData', logo: '/swiftdata.png', category: 'Database' },
-    { name: 'XCTest', logo: '/xctest.png', category: 'Testing' },
+    { name: 'CloudKit', logo: '/cloudkit.png', category: 'iOS Framework' },
 
     // Backend & Database
     { name: 'Firebase', logo: '/firebase.png', category: 'Backend Service' },

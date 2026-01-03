@@ -56,3 +56,27 @@ body {
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Hide scrollbar for horizontal scrolling containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Snap scrolling utilities */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-mandatory {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
